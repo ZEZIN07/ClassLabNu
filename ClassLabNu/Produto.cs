@@ -16,6 +16,7 @@ namespace ClassLabNu
         private string codprod;
         private double valor;
         private double desconto;
+        private bool Descontinuado;
 
         //propriedades
         public int IdProd { get { return idprod; } set { idprod = value; } }
@@ -23,7 +24,8 @@ namespace ClassLabNu
         public string Unidade { get { return unidade; } set { unidade = value; } }
         public string Codprod { get { return codprod; } set { codprod = value; } }
         public double Valor { get { return valor; } set { valor = value; } }
-        public double Desconto { get { return desconto; } set { valor = value; } }
+        public double Desconto { get { return desconto; } set { desconto = value; } }
+        public bool descontinuado { get { return descontinuado; } set { descontinuado = value; } }
 
 
         //construtores
@@ -32,22 +34,24 @@ namespace ClassLabNu
         {
         }
 
-        public Produto(string descricao, string unidade, string codprod, double valor)
+        public Produto(string descricao, string unidade, string codprod, double valor, double desconto)
         {
             this.descricao = descricao;
-            Unidade = unidade;
-            Codprod = codprod;
-            Valor = valor;
+            this.Unidade = unidade;
+            this.Codprod = codprod;
+            this.Valor = valor;
+            this.Desconto = desconto;
         }
 
-        public Produto(int idProd, string descricao, string unidade, string codprod, double valor, double desconto)
+        public Produto(int idProd, string descricao, string unidade, string codprod, double valor, double desconto, bool descontinuado)
         {
-            IdProd = idProd;
+            this.IdProd = idProd;
             this.descricao = descricao;
-            Unidade = unidade;
-            Codprod = codprod;
-            Valor = valor;
-            Desconto = desconto;
+            this.Unidade = unidade;
+            this.Codprod = codprod;
+            this.Valor = valor;
+            this.Desconto = desconto;
+            this.descontinuado = descontinuado;
         }
 
 
