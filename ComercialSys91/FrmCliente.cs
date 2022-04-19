@@ -104,25 +104,35 @@ namespace ComercialSys91
                 if (cliente.Id > 0)
                 {
                     txtNome.Text = cliente.Nome.ToString();
-                    txtCpf.Text = cliente.Cpf.ToString();   
+                    txtCpf.Text = cliente.Cpf.ToString();
                     txtEmail.Text = cliente.Email.ToString();
                     dtpDatatime.Value = cliente.DataCad.Date;
                     chkAtivo.Checked = cliente.Ativo;
 
                     btnBuscar.Text = "...";
-                  
+
 
                 }
                 else
                 {
                     MessageBox.Show("Esse Codigo de Cliente Não Existe!");
                 }
-
-            private void btnAlterar_Click(object sender, EventArgs e)
-                {
-
-                }
             }
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = new Cliente();
+            if (cliente.Alterar(int.Parse(txtId.Text), txtNome.Text, txtEmail.Text))
+            {
+                MessageBox.Show("Cliente alterado com Sucesso!");
+            }
+            else
+            {
+                MessageBox.Show("Falha na alteração do Cliente!");
+            }
+
         }
     }
 }
+
