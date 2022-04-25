@@ -213,7 +213,7 @@
             this.clnCpf,
             this.clnEmail,
             this.clnAtivo});
-            this.dgvClientes.Location = new System.Drawing.Point(67, 216);
+            this.dgvClientes.Location = new System.Drawing.Point(516, 19);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -275,7 +275,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 476);
+            this.ClientSize = new System.Drawing.Size(1020, 476);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.dtpDatatime);

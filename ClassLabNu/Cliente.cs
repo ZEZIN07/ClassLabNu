@@ -154,6 +154,5 @@ namespace ClassLabNu
             cmd.ExecuteReader();
             cmd.Connection.Close();
         }
-
     }
 }

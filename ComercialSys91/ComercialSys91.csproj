@@ -101,11 +101,17 @@
     <Compile Include="FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmProduto.cs">
+    <Compile Include="Frmpedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmProduto.Designer.cs">
-      <DependentUpon>FrmProduto.cs</DependentUpon>
+    <Compile Include="Frmpedido.Designer.cs">
+      <DependentUpon>Frmpedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmprodutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmprodutos.Designer.cs">
+      <DependentUpon>frmprodutos.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmUsuario.cs">
       <SubType>Form</SubType>
@@ -117,6 +123,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmpedido.resx">
+      <DependentUpon>Frmpedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
