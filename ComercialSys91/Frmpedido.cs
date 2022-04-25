@@ -21,8 +21,21 @@ namespace ComercialSys91
         private void Frmpedido_Load(object sender, EventArgs e)
         {
             var lista = Cliente.Listar();
-            comboBox1.DataSource = lista;
-            comboBox1.DisplayMember = "Descricao";
+            comboBox1.DataSource = lista.ToArray();
+            comboBox1.DisplayMember = "Nome";
+            comboBox1.ValueMember = "Id";
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(comboBox1.SelectedValue.ToString());
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox1.Text = comboBox1.SelectedValue.ToString();
         }
     }
 }

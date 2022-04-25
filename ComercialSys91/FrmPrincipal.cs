@@ -32,14 +32,11 @@ namespace ComercialSys91
             frmCliente.Show();
         }
 
-        private void frmPedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void novoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            Frmpedido frmpedido = new Frmpedido();
+            frmpedido.MdiParent = this;
+            frmpedido.Show();
         }
     }
 }
