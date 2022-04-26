@@ -15,7 +15,7 @@ namespace ClassLabNu
         private string codbar;
         private double valor;
         private double desconto;
-        private bool Descontinuado;
+        private bool descontinuado;
 
         //propriedades
         public int IdProd { get { return idprod; } set { idprod = value; } }
@@ -24,7 +24,8 @@ namespace ClassLabNu
         public string Codbar { get { return codbar; } set { codbar = value; } }
         public double Valor { get { return valor; } set { valor = value; } }
         public double Desconto { get { return desconto; } set { desconto = value; } }
-        public bool descontinuado { get { return descontinuado; } set { descontinuado = value; } }
+        public bool Descontinuado { get { return descontinuado; } }
+
 
 
         //construtores

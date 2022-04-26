@@ -11,31 +11,28 @@ using ClassLabNu;
 
 namespace ComercialSys91
 {
-    public partial class Frmpedido : Form
+    public partial class FrmPedidos : Form
     {
-        public Frmpedido()
+        public FrmPedidos()
         {
             InitializeComponent();
         }
 
-        private void Frmpedido_Load(object sender, EventArgs e)
+        private void FrmPedidos_Load(object sender, EventArgs e)
         {
-            var lista = Cliente.Listar();
-            comboBox1.DataSource = lista.ToArray();
-            comboBox1.DisplayMember = "Nome";
-            comboBox1.ValueMember = "Id";
-
+            txtDataPed.Text = DateTime.Now.Date.ToString();
+            cmbCliente.DataSource = Cliente.Listar().ToArray();
+            cmbCliente.DisplayMember = "Nome";
+            cmbCliente.ValueMember = "Id";
+            cmbVendedor.DataSource = Usuario.Listar().ToArray();
+            cmbVendedor.DisplayMember = "Nome";
+            cmbVendedor.ValueMember = "Id";
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(comboBox1.SelectedValue.ToString());
-        }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            textBox1.Text = comboBox1.SelectedValue.ToString();
         }
     }
 }

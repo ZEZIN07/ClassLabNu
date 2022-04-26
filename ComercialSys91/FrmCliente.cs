@@ -20,6 +20,12 @@ namespace ComercialSys91
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            string usuario = System.Environment.UserName;
+            Text += " - " + usuario;
+            cmbNivel.DataSource = Nivel.Listar().ToArray();
+            cmbNivel.DisplayMember = "Nome";
+            cmbNivel.ValueMember = "Id";
+
 
         }
 
@@ -54,39 +60,11 @@ namespace ComercialSys91
                 dgvClientes.Rows[cont].Cells[3].Value = cliente.Email.ToString();
                 dgvClientes.Rows[cont].Cells[4].Value = cliente.Ativo;
                 cont++;
-
-                //lstClientes.Items.Add(cliente.Id + " - " + cliente.Nome);
             }
+            listaDeClientes.ForEach(x =>
+            {
 
-        }
-
-        private void lstClientes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            });
 
         }
 
@@ -97,25 +75,29 @@ namespace ComercialSys91
                 txtId.ReadOnly = false;
                 txtId.Focus();
                 btnBuscar.Text = "Buscar";
+                txtCpf.Enabled = false;
             }
             else
             {
                 Cliente cliente = Cliente.ConsultarPorId(int.Parse(txtId.Text));
                 if (cliente.Id > 0)
                 {
+
                     txtNome.Text = cliente.Nome.ToString();
                     txtCpf.Text = cliente.Cpf.ToString();
                     txtEmail.Text = cliente.Email.ToString();
-                    dtpDatatime.Value = cliente.DataCad.Date;
+                    dtpDataCad.Value = cliente.DataCad.Date;
                     chkAtivo.Checked = cliente.Ativo;
 
                     btnBuscar.Text = "...";
-
+                    txtId.ReadOnly = true;
+                    btnAlterar.Enabled = true;
+                    txtCpf.ReadOnly = true;
 
                 }
                 else
                 {
-                    MessageBox.Show("Esse Codigo de Cliente Não Existe!");
+                    MessageBox.Show("Esse código de cliente não existe!");
                 }
             }
         }
@@ -131,6 +113,36 @@ namespace ComercialSys91
             {
                 MessageBox.Show("Falha na alteração do Cliente!");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("insert usuarios (nome, senha, nivel, ativo) values ('" + txtNomeUser.Text);
+            sb.Append("','");
+            sb.Append(txtEmailUser.Text);
+            sb.Append("','");
+            sb.Append(txtSenhaUser.Text);
+            sb.Append("',");
+            sb.Append(cmbNivel.SelectedValue + ",default)");
+            MessageBox.Show(sb.ToString());
+
+            //Produto produto = new Produto();
+
+        }
+
+        private void cmbNivel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
 
         }
     }

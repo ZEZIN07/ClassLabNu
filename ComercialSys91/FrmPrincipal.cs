@@ -17,16 +17,11 @@ namespace ComercialSys91
             InitializeComponent();
         }
 
-        private void FrmPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //criar instância do formulário cliente
+            // criar instância do Formulário Cliente
             FrmCliente frmCliente = new FrmCliente();
-            // tornando frmCliente filho do container FrmPrincipal
+            // tornando frmCliente filho do Container FrmPrincipal (this)
             frmCliente.MdiParent = this;
             // exibe o formulário de cliente no formprincipal
             frmCliente.Show();
@@ -34,9 +29,33 @@ namespace ComercialSys91
 
         private void novoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frmpedido frmpedido = new Frmpedido();
-            frmpedido.MdiParent = this;
-            frmpedido.Show();
+            FrmPedidos frmPedidos = new FrmPedidos();
+            frmPedidos.MdiParent = this;
+            frmPedidos.Show();
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void novoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmUsuarios frmUsuario = new FrmUsuarios();
+            frmUsuario.MdiParent = this;
+            frmUsuario.Show();
+        }
+
+        private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmprodutos frmprodutos = new frmprodutos();
+            frmprodutos.MdiParent = this;
+            frmprodutos.Show();
         }
     }
 }
