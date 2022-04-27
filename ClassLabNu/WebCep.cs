@@ -10,19 +10,14 @@ namespace ClassLabNu
     public class WebCEP
     {  
         string _uf;
-        string _cidade;
         string _bairro;
         string _logradouro;
-        string _resultado;
-        string _resultato_txt;
+        string _localidade;
+
  
         public string UF
         {
             get { return _uf; }
-        }
-        public string Cidade
-        {
-            get { return _cidade; }
         }
         public string Bairro
         {
@@ -31,14 +26,6 @@ namespace ClassLabNu
         public string Lagradouro
         {
             get { return _logradouro; }
-        }
-        public string Resultado
-        {
-            get { return _resultado; }
-        }
-        public string ResultadoTXT
-        {
-            get { return _resultato_txt; }
         }
 
 
@@ -50,46 +37,24 @@ namespace ClassLabNu
         public WebCEP(string CEP)
         {
             _uf = "";
-            _cidade = "";
+            _localidade = "";
             _bairro = "";
             _logradouro = "";
-            _resultado = "0";
-            _resultato_txt = "CEP não encontrado";
 
             //Cria um DataSet  baseado no retorno do XML  
             DataSet ds = new DataSet();
-            ds.ReadXml("http://cep.republicavirtual.com.br/web_cep.php?cep=" + CEP.Replace("-", "").Trim() + "&formato=xml");
+            ds.ReadXml("https://viacep.com.br/ws/" + CEP.Replace("-", "").Trim() + "/xml");
 
             if (ds != null)
             {
                 if (ds.Tables[0].Rows.Count > 0)
                 {
-                    _resultado = ds.Tables[0].Rows[0]["resultado"].ToString();
-                    switch (_resultado)
-                    {
-                        case "1":
-                            _uf = ds.Tables[0].Rows[0]["uf"].ToString().Trim();
-                            _cidade = ds.Tables[0].Rows[0]["cidade"].ToString().Trim();
-                            _bairro = ds.Tables[0].Rows[0]["bairro"].ToString().Trim();
-                            _logradouro = ds.Tables[0].Rows[0]["logradouro"].ToString().Trim();
-                            _resultato_txt = "CEP completo";
-                            break;
-                        case "2":
-                            _uf = ds.Tables[0].Rows[0]["uf"].ToString().Trim();
-                            _cidade = ds.Tables[0].Rows[0]["cidade"].ToString().Trim();
-                            _bairro = "";
-                            _logradouro = "";
-                            _resultato_txt = "CEP  único";
-                            break;
-                        default:
-                            _uf = "";
-                            _cidade = "";
-                            _bairro = "";
-                            _logradouro = "";
-                            _resultato_txt = "CEP não  encontrado";
-                            break;
-
-                    }
+                    _uf = ds.Tables[0].Rows[0]["uf"].ToString().Trim();
+                    _localidade = ds.Tables[0].Rows[0]["localidade"].ToString().Trim();
+                    _bairro = ds.Tables[0].Rows[0]["bairro"].ToString().Trim();
+                    _logradouro = ds.Tables[0].Rows[0]["logradouro"].ToString().Trim(); _uf = ds.Tables[0].Rows[0]["uf"].ToString().Trim();
+                    _localidade = ds.Tables[0].Rows[0]["localidade"].ToString().Trim();
+                    _bairro = ds.Tables[0].Rows[0]["bairro"].ToString().Trim();
                 }
             }            
         }

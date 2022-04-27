@@ -423,6 +423,7 @@
             this.txtCep.Size = new System.Drawing.Size(64, 20);
             this.txtCep.TabIndex = 10;
             this.txtCep.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtCep_MaskInputRejected);
+            this.txtCep.Leave += new System.EventHandler(this.txtCep_Leave);
             // 
             // cb_Tipo
             // 

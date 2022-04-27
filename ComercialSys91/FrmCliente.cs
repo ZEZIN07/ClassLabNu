@@ -148,7 +148,26 @@ namespace ComercialSys91
 
         private void txtCep_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            WebCEP webcep = new WebCEP(txtCep.Text);
+            
+
+        }
+
+        private void txtCep_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                WebCEP webcep = new WebCEP(txtCep.Text);
+                _logradouro.Text = webcep.Lagradouro;
+                _cidade.Text = webcep.localidade;
+                _bairro.Text = webcep.Bairro;
+                _uf.Text = webcep.UF;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             
         }
     }
