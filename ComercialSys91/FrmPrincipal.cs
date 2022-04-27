@@ -36,7 +36,9 @@ namespace ComercialSys91
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-
+            login Login = new login();
+            Login.ShowDialog();
+                
         }
 
         private void novoToolStripMenuItem1_Click(object sender, EventArgs e)

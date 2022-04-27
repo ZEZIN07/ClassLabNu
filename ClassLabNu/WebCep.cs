@@ -27,6 +27,10 @@ namespace ClassLabNu
         {
             get { return _logradouro; }
         }
+        public string Localidade
+        {
+            get { return _localidade; }
+        }
 
 
         #region "Construtor"  

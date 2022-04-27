@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace ClassLabNu
 {
@@ -76,8 +77,17 @@ namespace ClassLabNu
         }
         public static bool EfetuarLogin(string email, string senha)
         {
+            
+            Usuario usuario = new Usuario();
+            
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from usuarios where email = '"+email+"' and senha = md5('"+senha+"')";
+            var dr = cmd.ExecuteReader();
+            
             // realiza validação e devolve verdadeiro ou falso
-            return false;
+
+            return dr.Read(); 
         }
     }
 }

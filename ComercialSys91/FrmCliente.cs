@@ -158,7 +158,7 @@ namespace ComercialSys91
             {
                 WebCEP webcep = new WebCEP(txtCep.Text);
                 _logradouro.Text = webcep.Lagradouro;
-                _cidade.Text = webcep.localidade;
+                _localidade.Text = webcep.Localidade;
                 _bairro.Text = webcep.Bairro;
                 _uf.Text = webcep.UF;
 

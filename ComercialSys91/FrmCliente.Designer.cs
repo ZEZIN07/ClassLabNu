@@ -66,7 +66,7 @@
             this.txtComplemento = new System.Windows.Forms.TextBox();
             this.cb_Estado = new System.Windows.Forms.ComboBox();
             this._uf = new System.Windows.Forms.TextBox();
-            this._cidade = new System.Windows.Forms.TextBox();
+            this._localidade = new System.Windows.Forms.TextBox();
             this._bairro = new System.Windows.Forms.TextBox();
             this.txtNum = new System.Windows.Forms.TextBox();
             this._logradouro = new System.Windows.Forms.TextBox();
@@ -331,7 +331,7 @@
             this.grbEndereco.Controls.Add(this.txtComplemento);
             this.grbEndereco.Controls.Add(this.cb_Estado);
             this.grbEndereco.Controls.Add(this._uf);
-            this.grbEndereco.Controls.Add(this._cidade);
+            this.grbEndereco.Controls.Add(this._localidade);
             this.grbEndereco.Controls.Add(this._bairro);
             this.grbEndereco.Controls.Add(this.txtNum);
             this.grbEndereco.Controls.Add(this._logradouro);
@@ -489,12 +489,12 @@
             this._uf.Size = new System.Drawing.Size(48, 20);
             this._uf.TabIndex = 6;
             // 
-            // _cidade
+            // _localidade
             // 
-            this._cidade.Location = new System.Drawing.Point(297, 72);
-            this._cidade.Name = "_cidade";
-            this._cidade.Size = new System.Drawing.Size(130, 20);
-            this._cidade.TabIndex = 5;
+            this._localidade.Location = new System.Drawing.Point(297, 72);
+            this._localidade.Name = "_localidade";
+            this._localidade.Size = new System.Drawing.Size(130, 20);
+            this._localidade.TabIndex = 5;
             // 
             // _bairro
             // 
@@ -838,7 +838,7 @@
         private System.Windows.Forms.GroupBox grbEndereco;
         private System.Windows.Forms.ComboBox cb_Estado;
         private System.Windows.Forms.TextBox _uf;
-        private System.Windows.Forms.TextBox _cidade;
+        private System.Windows.Forms.TextBox _localidade;
         private System.Windows.Forms.TextBox _bairro;
         private System.Windows.Forms.TextBox txtNum;
         private System.Windows.Forms.TextBox _logradouro;
