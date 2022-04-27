@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using ClassLabNu;
 
 namespace ComercialSys91
-{
+{    
     public partial class FrmCliente : Form
     {
         public FrmCliente()
@@ -144,6 +144,12 @@ namespace ComercialSys91
         private void label22_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtCep_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            WebCEP webcep = new WebCEP(txtCep.Text);
+            
         }
     }
 }

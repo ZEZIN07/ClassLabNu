@@ -33,18 +33,18 @@ namespace ComercialSys91
           
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        /*private void button1_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario();
-            if (usuario.Inserir(int.Parse(txtId.Text), txtNome.Text, txtEmail.Text))
+            if (usuario.Inserir(txtNome.Text, txtEmail.Text, txtSenha.Text)
             {
-                MessageBox.Show("Usuario Alterado Com Sucesso!");
+                MessageBox.Show("Usuario inserido Com Sucesso!");
             }
             else
             {
-                MessageBox.Show("Falha Na Alteração Do Cliente!");
-            }
+                MessageBox.Show("Falha Na inserido Do Cliente!");
+            }*/
 
-        }
+        
     }
 }
