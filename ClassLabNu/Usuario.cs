@@ -14,16 +14,15 @@ namespace ClassLabNu
         private int id;
         private string nome;
         private string email;
-        private Nivel nivel;
-        private string password;
+        private string senha;
         private bool ativo;
 
         // propriedades
         public int Id { get { return id; } }
         public string Nome { get { return nome; } }
         public string Email { get { return email; } set { email = value; } }
-        public string Password { get { return password; } }
-        public Nivel Nivel { get { return nivel; } }
+        public string Password { get { return senha; } }
+        //public Nivel Nivel { get { return nivel; } }
         public bool Ativo { get { return ativo; } set { ativo = value; } }
 
 
@@ -32,29 +31,35 @@ namespace ClassLabNu
         {
 
         }
-        public Usuario(string nome, string email, Nivel nivel, string password)
+        public Usuario(string nome, string email, string password)
         {
             this.nome = nome;
             this.email = email;
-            this.password = password;
-            this.nivel = nivel;
+            this.senha = password;
+            //this.nivel = nivel;
             ativo = true;
         }
 
-        public Usuario(int id, string nome, string email, string password, Nivel nivel, bool ativo)
+        public Usuario(int id, string nome, string email, string password, bool ativo)
         {
             this.id = id;
             this.nome = nome;
             this.email = email;
-            this.password = password;
-            this.nivel = nivel;
+            this.senha = password;
+           // this.nivel = nivel;
             this.ativo = ativo;
         }
         // métodos da classe
-        public int Inserir()
+        public void Inserir()
         {
-            // chamadas de banco e gravo o registro
-            return id;
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_usuario_inserir";
+            cmd.Parameters.AddWithValue("_nome", Nome);
+            cmd.Parameters.AddWithValue("_senha", senha);
+            cmd.Parameters.AddWithValue("_email", Email);
+            id = Convert.ToInt32(cmd.ExecuteScalar());
+            cmd.Connection.Close();
         }
         public static List<Usuario> Listar()
         {
@@ -69,8 +74,8 @@ namespace ClassLabNu
                     dr.GetString(1),
                     dr.GetString(2),
                     dr.GetString(3),
-                    Nivel.ObterPorId(dr.GetInt32(0)),
-                    dr.GetBoolean(4)));
+                    dr.GetBoolean(5))
+                    );
             }
             return lista;
 

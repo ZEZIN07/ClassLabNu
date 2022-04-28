@@ -129,23 +129,11 @@
   <metadata name="clnAtivo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="clnNome.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clnCpf.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clnEmail.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clnAtivo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAA21JREFUOE+Fk21MU1cYxy/hJSwLmLgIH7oPpZRQQ0hIWmhxEWW11LaUq7S8Fdxa
+        wAAADsABataJCQAAA21JREFUOE+Fk21MU1cYxy/hJSwLmLgIH7oPpZRQQ0hIWmhxEWW11LaUq7S8Fdxa
         VkpM6NjUNgyESJwvIWSIExiSWucSUqjLlLK5CYjUwhB5ixRmjAUhGs2MEAkwUZO/T2/MPpn4JL/c5OT8
         f+d5cs9hPlR6vX6bwWDI3P357pNyubxHlib7gpa3EGHchveVUqnkl5pLjZXfVF4wGr+cY1l2w2KxgNVq
         odPplqKiorJp2ydECBfIysraSpt2lpWX1dTV1/11rvXc8w5HBxxOB8xmMxISEmA0mqBWqVFSXPI6Jiam

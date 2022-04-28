@@ -33,18 +33,38 @@ namespace ComercialSys91
           
         }
 
-        /*private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario();
-            if (usuario.Inserir(txtNome.Text, txtEmail.Text, txtSenha.Text)
+            Usuario usuario = new Usuario(txtNome.Text, txtEmail.Text, txtSenha.Text);
+            usuario.Inserir();
+            if (usuario.Id > 0)
             {
                 MessageBox.Show("Usuario inserido Com Sucesso!");
             }
             else
             {
-                MessageBox.Show("Falha Na inserido Do Cliente!");
-            }*/
+                MessageBox.Show("Falha ao inserir Usuario!");
+            }
 
-        
+        }
+
+        private void btnListar_Click_1(object sender, EventArgs e)
+        {
+            dgvUsuarios.Rows.Clear();
+            List<Usuario> listadeusuarios = Usuario.Listar();
+            int cont = 0;
+            foreach(Usuario usuario in listadeusuarios)
+            {
+                dgvUsuarios.Rows.Add();
+                dgvUsuarios.Rows[cont].Cells[0].Value = usuario.Id.ToString();
+                dgvUsuarios.Rows[cont].Cells[1].Value = usuario.Nome.ToString();
+                dgvUsuarios.Rows[cont].Cells[2].Value = usuario.Email.ToString();
+                dgvUsuarios.Rows[cont].Cells[3].Value = usuario.Password.ToString();
+                dgvUsuarios.Rows[cont].Cells[4].Value = usuario.Ativo;
+
+                cont++;
+
+            }
+        }
     }
 }

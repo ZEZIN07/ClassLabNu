@@ -22,8 +22,9 @@ namespace ClassLabNu
 
 
         // métodos construtores
-        public Nivel()
+        public Nivel(int _id = 0)
         {
+            id = _id;
         }
         public Nivel(string nome, string sigla)
         {

@@ -55,9 +55,14 @@ namespace ComercialSys91
 
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmprodutos frmprodutos = new frmprodutos();
-            frmprodutos.MdiParent = this;
-            frmprodutos.Show();
+        
+        }
+
+        private void nomeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmprodutos frmProduto = new frmprodutos();
+            frmProduto.MdiParent = this;
+            frmProduto.Show();
         }
     }
 }

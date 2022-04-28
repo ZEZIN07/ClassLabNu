@@ -114,7 +114,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.btnCancelar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "login";
             this.ShowInTaskbar = false;
