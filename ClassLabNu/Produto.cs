@@ -73,9 +73,10 @@ namespace ClassLabNu
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "sp_produtos_inserir";
             cmd.Parameters.AddWithValue("_descricao", descricao);
-            cmd.Parameters.AddWithValue("_unidade", unidade);
-            cmd.Parameters.AddWithValue("_codbar", codbar);
-            cmd.Parameters.AddWithValue("_valor", valor);
+            cmd.Parameters.AddWithValue("_unidade", Unidade);
+            cmd.Parameters.AddWithValue("_codbar", Codbar);
+            cmd.Parameters.AddWithValue("_valor", Valor);
+            cmd.Parameters.AddWithValue("_desconto", Desconto);
             cmd.ExecuteNonQuery();
             cmd.Connection.Close();
         }
@@ -97,7 +98,7 @@ namespace ClassLabNu
             // conecta banco e realiza consulta por parte da descriação do produtos
             return produtos;
         }
-        public List<Produto> ListarTodos(string descriParte = null)
+        public static List<Produto> ListarTodos(string descriParte = null)
         {
             List<Produto> produtos = new List<Produto>();
             // conecta banco e realiza consulta retornando todos produtos
