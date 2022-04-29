@@ -772,6 +772,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1018, 586);
             this.Controls.Add(this.txtEmailUser);
             this.Controls.Add(this.textBox10);
@@ -796,7 +797,9 @@
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.btnInserir);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();

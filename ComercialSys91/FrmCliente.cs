@@ -97,7 +97,7 @@ namespace ComercialSys91
                 }
                 else
                 {
-                    MessageBox.Show("Esse código de cliente não existe!");
+                    MessageBox.Show("Esse Código De Cliente Não Existe!");
                 }
             }
         }
@@ -107,11 +107,11 @@ namespace ComercialSys91
             Cliente cliente = new Cliente();
             if (cliente.Alterar(int.Parse(txtId.Text), txtNome.Text, txtEmail.Text))
             {
-                MessageBox.Show("Cliente alterado com Sucesso!");
+                MessageBox.Show("Cliente Alterado Com Sucesso!");
             }
             else
             {
-                MessageBox.Show("Falha na alteração do Cliente!");
+                MessageBox.Show("Falha Na Alteração Do Cliente!");
             }
         }
 

@@ -82,7 +82,7 @@ namespace ClassLabNu
             }
             catch (Exception)
             {
-
+               
             }
             return resultado;
         }

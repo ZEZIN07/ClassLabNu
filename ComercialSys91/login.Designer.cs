@@ -40,21 +40,27 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(213, 149);
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(213, 133);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(75, 32);
             this.btnCancelar.TabIndex = 0;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Location = new System.Drawing.Point(56, 149);
+            this.btnEntrar.Image = ((System.Drawing.Image)(resources.GetObject("btnEntrar.Image")));
+            this.btnEntrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEntrar.Location = new System.Drawing.Point(56, 133);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(75, 23);
+            this.btnEntrar.Size = new System.Drawing.Size(60, 32);
             this.btnEntrar.TabIndex = 1;
             this.btnEntrar.Text = "Entrar";
+            this.btnEntrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
@@ -106,7 +112,8 @@
             this.AcceptButton = this.btnEntrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(343, 193);
+            this.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.ClientSize = new System.Drawing.Size(341, 211);
             this.Controls.Add(this.lblMensagem);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtEmail);
@@ -114,12 +121,14 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.btnCancelar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "login";
+            this.Opacity = 0.9D;
+            this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ComercialSys - Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "LOGIN";
             this.Load += new System.EventHandler(this.login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

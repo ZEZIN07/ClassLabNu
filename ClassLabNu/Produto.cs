@@ -69,6 +69,7 @@ namespace ClassLabNu
 
         public void Inserir()
         {
+
             MySqlCommand cmd = Banco.Abrir();
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "sp_produtos_inserir";
@@ -77,15 +78,11 @@ namespace ClassLabNu
             cmd.Parameters.AddWithValue("_codbar", Codbar);
             cmd.Parameters.AddWithValue("_valor", Valor);
             cmd.Parameters.AddWithValue("_desconto", Desconto);
+            cmd.Parameters.AddWithValue("_descontinuado", descontinuado);
             cmd.ExecuteNonQuery();
             cmd.Connection.Close();
         }
-        public Produto BuscarPorId(int _id)
-        {
-            Produto produto = new Produto();
-            // conecta banco realiza consulta por Id do produto
-            return produto;
-        }
+        
         public Produto BuscarPorCodBar(string _codBar)
         {
             Produto produto = new Produto();
@@ -127,9 +124,48 @@ namespace ClassLabNu
             cmd.Connection.Close();
             return produtos;
         }
-        public bool Alterar()
+        public bool Alterar(int _id,double _valor, double _desconto, double _codbar)
         {
-            return true;
+            bool resultado = false;
+            try
+            {
+                var cmd = Banco.Abrir();
+                cmd.CommandType = CommandType.StoredProcedure;
+                // recebe o nome da procedure
+                cmd.CommandText = "sp_produto_alterar";
+                // adiciona os parâmetros da procedure - lá do MySql
+                // cmd.Parameters.Add("_id", MySqlDbType.Int32).Value = _id;
+                cmd.Parameters.AddWithValue("_id", _id);
+                cmd.Parameters.AddWithValue("_valor", _valor);
+                cmd.Parameters.AddWithValue("_desconto", _desconto);
+                cmd.Parameters.AddWithValue("_codbar", _codbar);
+                cmd.ExecuteNonQuery();
+                resultado = true;
+                cmd.Connection.Close();
+            }
+            catch (Exception)
+            {
+
+            }
+            return resultado;
+        }
+        public static Produto BuscarPorId(int _id)
+        {
+            Produto produto = new Produto();
+            MySqlCommand cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from produtos where idprod = " + _id;
+            MySqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                produto.idprod = Convert.ToInt32(dr["idprod"]);
+                produto.descricao = dr["descricao"].ToString();
+                produto.unidade = dr.GetString(2);
+                produto.valor = dr.GetDouble(3);
+                produto.desconto = dr.GetDouble(4);
+                produto.descontinuado = dr.GetBoolean(5);
+            }
+            return produto;
         }
 
     }// fim da classe produto

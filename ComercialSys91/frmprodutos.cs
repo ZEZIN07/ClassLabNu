@@ -35,18 +35,28 @@ namespace ComercialSys91
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-           Produto produto = new Produto(txtDescricao.Text, txtCod.Text, txtUnidade.Text, Double.Parse(txtValor.Text), Double.Parse(txtDesconto.Text));
-
-            produto.Inserir();
-
-            if (produto.IdProd > 0)
+            try
             {
+                Produto produto = new Produto(txtDescricao.Text, 
+                    txtuni.Text, txtcodbar.Text, 
+                    Double.Parse(txtvalor.Text), 
+                    Double.Parse(txtdesconto.Text));
+
+                produto.Inserir();
+
                 MessageBox.Show("Produto inserido Com Sucesso!");
             }
-            else
+            catch (Exception ex )
             {
-                MessageBox.Show("Falha ao inserir Produto!");
+
+                MessageBox.Show(Text, ex.Message);
             }
+
+           
+
+            
+
+           
 
         }
 
@@ -67,6 +77,61 @@ namespace ComercialSys91
 
                 cont++;
 
+            }
+        }
+
+        private void dgvProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtValor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            Produto produto = new Produto();
+            if (produto.Alterar(int.Parse(txtId.Text), Double.Parse(txtvalor.Text), double.Parse(txtdesconto.Text)))
+            {
+                MessageBox.Show("Produto alterado com Sucesso!");
+            }
+            else
+            {
+                MessageBox.Show("Falha na alteração do Produto!");
+            }
+        }
+
+        private void bntbuscar_Click(object sender, EventArgs e)
+        {
+            if (bntbuscar.Text == "...")
+            {
+                txtId.ReadOnly = false;
+                txtId.Focus();
+                bntbuscar.Text = "Buscar";
+            }
+            else
+            {
+                Produto produto = Produto.BuscarPorId(int.Parse(txtId.Text));
+                if (produto.IdProd > 0)
+                {
+
+                    txtcodbar.Text = produto.Codbar.ToString();
+                    txtuni.Text = produto.Unidade.ToString();
+                    txtvalor.Text = produto.Valor.ToString();
+                    txtdesconto.Text = produto.Desconto.ToString();
+                    txtDescricao.Text = produto.descricao.ToString();
+
+                    bntbuscar.Text = "...";
+                    txtId.ReadOnly = true;
+                    btnAlterar.Enabled = true;
+
+                }
+                else
+                {
+                    MessageBox.Show("Esse Código De Produto Não Existe!");
+                }
             }
         }
     }
